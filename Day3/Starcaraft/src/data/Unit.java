@@ -3,7 +3,25 @@ package data;
 
 
 // (캡슐화) 내부적으로 관리할 수 있게, 다른 코드에 영향을 미치치 않음
-abstract public class Unit { // abstract : 얘 혼자서는 아무것도 못해!!하는 뜻. 다른게 필요해! -> zealout에서 쉴드를 만들어 완성이 됨.
+abstract public class Unit extends Player { // abstract : 얘 혼자서는 아무것도 못해!!하는 뜻. 다른게 필요해! -> zealout에서 쉴드를 만들어 완성이 됨.
+	
+	static int count = 0; // 카운트는 한 번만 세면 되기 때문에, static
+	private int id;
+	private String name; // 거의 모든 필드는 private로 씀.
+	private int hp;
+	private int attackPoint;
+	
+// "건물","살았다","죽었다" -> 이것 안에서만 사용할 거면 eunm(열거)를 사용.
+	private UStatus status; // import를 하지 않았는데, USstatus클래스가 사용 가능하다 -> 왜? package가 같기 때문에!!!!!!
+	public String attack() {
+		return name + "가 " + attackPoint + "딜을 줬습니다";
+	}
+	
+	
+	// getter, setter : getter는 만들어도 되는데, setter는 웬만해서는 쓰지말자
+	public int getId() {
+		return id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -28,19 +46,14 @@ abstract public class Unit { // abstract : 얘 혼자서는 아무것도 못해!
 		this.name = name;
 		this.attackPoint = attackPoint;
 		this.hp = hp;
+		count++;
+		id = count;
 	}
 	
-	
-	
-	private String name; // 거의 모든 필드는 private로 씀.
-	private int hp;
-	private int attackPoint;
-	public String attack() {
-		return name + "가 " + attackPoint + "딜을 줬습니다";
-	}
+
 	
 	public String getDamage(Unit unit) {
-		this.hp = this.hp - unit.getAttackPoint();
+		hp = hp - unit.getAttackPoint();
 		return name + "가 " + unit.getName() + "한테 " + unit.getAttackPoint() + "딜을 받았습니다";
 	}
 }

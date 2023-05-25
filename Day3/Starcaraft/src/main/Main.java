@@ -28,6 +28,7 @@ public class Main {
 		zealout.getDamage(marine);
 		System.out.println(zealout.getHp());
 		}
+		System.out.println(marine.getId() + " " + zealout.getId());
 	}
 
 }
