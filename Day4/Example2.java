@@ -11,7 +11,7 @@ public class Example2 {
 		
 		List<Integer> list = new ArrayList(); // ctrl + space -> List - java.util
 		// List : 길이가 무한하다
-		list.add(1); 
+		list.add(1);
 		list.add(2);
 		list.add(1);
 //		Integer[] tmp = (Integer[]) list.toArray();
@@ -19,9 +19,10 @@ public class Example2 {
 		System.out.println(arr.length);
 		System.out.println(list.size()); // list에  toStirng이 구현되어 있다. list = list.String()
 		// arr은 arr.length사용, list는 .size()사용
-		System.out.println(list.contains(1)); // .contains() : 1을 가지고 있으면 true를 반환
-		System.out.println(list.remove("st")); // 입력한 것 삭제
-		System.out.println(list.get(0)); // 0번째(index)에 있는 값을 가져옴
+		System.out.println(list.remove(1)); // 입력한 값 삭제, 삭제할게 없으면 false
+//		System.out.println(list.get(0)); // 1   0번째(index)에 있는 값
+//		System.out.println(list.get(1)); // 2   1번째에 있는 값
+//		System.out.println(list.get(2)); // 1   2번째에 있는 값
 		System.out.println(list.set(0, 3)); // 0번째를 3으로 바꾸겠다
 		
 //		문제1. 123456798 넣고 짝수의 합을 구하자.
@@ -30,12 +31,16 @@ public class Example2 {
 		for(int i=0; i<10; i++) {
 			list2.add(i);
 		}
+		System.out.println("list2 " + list2);
+		
 		// 방법1
 		for(int i=0; i<list2.size(); i++) {
 			if(list2.get(i) % 2 == 0) {
 			sum += list2.get(i);
 			}
 		}
+		
+		
 		// 방법2
 		for(Integer i : list2)
 			if(i%2 ==0) {
@@ -57,17 +62,17 @@ public class Example2 {
 		Person person1 = new Person("Park", 20);
 		Person person2 = new Person("Kim", 20);
 		Person person3 = new Person("lee", 20);
-		List<Person>persons = new ArrayList<Person>(); // 타입List로 받을 수 있는 이유는 List가 부모?이기 때문 ex.calss ArrayList extends List
+		List<Person> persons = new ArrayList<Person>(); // 타입List로 받을 수 있는 이유는 List가 부모?이기 때문 ex.calss ArrayList extends List
 		// ArrList와 LinkList와 차이
 		
 		
-		persons.add(person1);
-		persons.add(person2);
-		persons.add(person3);
-		for(Person person: persons) {
-			person.age + 1;
-		}
-		
+//		persons.add(person1);
+//		persons.add(person2);
+//		persons.add(person3);
+//		for(Person person: persons) {
+//			person.age + 1;
+//		}
+//		
 		
 	}
 }
