@@ -42,7 +42,6 @@ public class Example3 {
 		orDefault.add(new Person1(name,age));
 		map.put(region, orDefault);
 		controller();
-		
 	}
 // find
 	static void find() {
@@ -50,8 +49,6 @@ public class Example3 {
 		if(map.containsKey(region)) {
 			System.out.println(map.get(region));
 		}
-		
-		
 	}
 // findAll 전체보기
 	static void findAll() {
